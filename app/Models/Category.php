@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Models;
+use App\Models\SubCategory;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -11,5 +12,11 @@ class Category extends Model
     'name',
     'status'
 ];
+
+public function subcategories()
+{
+    return $this->hasMany(SubCategory::class);
+}
+
 
 }

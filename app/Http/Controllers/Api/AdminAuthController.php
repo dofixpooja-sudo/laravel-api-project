@@ -11,13 +11,12 @@ class AdminAuthController extends Controller
 {
     public function login(Request $request)
     {
-        // 1️⃣ Validate input
+        
         $request->validate([
             'email' => 'required|email',
             'password' => 'required'
         ]);
 
-        // 2️⃣ Check user exists or not
         $admin = User::where('email', $request->email)
                      ->where('role', 'admin')
                      ->first();

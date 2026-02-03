@@ -8,7 +8,7 @@ use App\Models\Category;
 
 class CategoryController extends Controller
 {
-    // 🔹 READ: All categories
+  
     public function index()
     {
         $categories = Category::where('status', 1)->get();
@@ -19,7 +19,6 @@ class CategoryController extends Controller
         ], 200);
     }
 
-    // 🔹 READ: Single category
     public function show($id)
     {
         $category = Category::find($id);
@@ -37,7 +36,6 @@ class CategoryController extends Controller
         ], 200);
     }
 
-    // 🔹 CREATE
     public function store(Request $request)
     {
         $category = Category::create([
@@ -52,7 +50,7 @@ class CategoryController extends Controller
         ], 201);
     }
 
-    // 🔹 UPDATE
+
     public function update(Request $request, $id)
     {
         $category = Category::find($id);
@@ -75,7 +73,6 @@ class CategoryController extends Controller
         ], 200);
     }
 
-    // 🔹 DELETE
     public function destroy($id)
     {
         $category = Category::find($id);
